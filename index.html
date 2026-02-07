@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ростелеком | Отраслевые решения</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-wrapper">
+        
+        <header>
+            <div class="container header-content">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Rostelecom_logo_2018.svg/1200px-Rostelecom_logo_2018.svg.png" class="rt-logo" alt="Логотип">
+                <div class="brand-line">
+                    <h1>Отраслевые решения</h1>
+                    <span class="sub-brand">БИЗНЕС</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="menu-section">
+            <div class="container">
+                <div class="grid-menu">
+                    <div class="card" onclick="openSlide('robotics')">
+                        <div class="num">01</div>
+                        <h3>Роботизация производства</h3>
+                        <p>Резка, сварка, формовка</p>
+                    </div>
+                    <div class="card" onclick="openSlide('quality')">
+                        <div class="num">02</div>
+                        <h3>Контроль качества</h3>
+                        <p>ИИ и машинное зрение</p>
+                    </div>
+                    <div class="card" onclick="openSlide('security')">
+                        <div class="num">03</div>
+                        <h3>Средства охраны</h3>
+                        <p>Биометрия и периметр</p>
+                    </div>
+                    <div class="card" onclick="openSlide('eco')">
+                        <div class="num">04</div>
+                        <h3>Экомониторинг</h3>
+                        <p>Промбезопасность</p>
+                    </div>
+                    <div class="card" onclick="openSlide('equipment')">
+                        <div class="num">05</div>
+                        <h3>Тех. оборудование</h3>
+                        <p>Импортозамещение</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="terra-section">
+            <div class="container">
+                <h2>Проектный офис «ТЕРРА»</h2>
+                <div class="terra-desc">
+                    <p>Мы создаем цифровой фундамент для технологического лидерства вашего бизнеса. Проектный офис сопровождает заказчика на всех этапах цифровой трансформации — от аудита до сервисного обслуживания.</p>
+                </div>
+                
+                <div class="terra-grid">
+                    <div class="terra-item">
+                        <div class="icon">⚙️</div>
+                        <h4>Комплексный подход</h4>
+                        <p>Аудит, проектирование, внедрение и поддержка 24/7.</p>
+                    </div>
+                    <div class="terra-item">
+                        <div class="icon">🛡️</div>
+                        <h4>Импортозамещение</h4>
+                        <p>Российское ПО и оборудование (Реестр Минцифры, ФЗ-187).</p>
+                    </div>
+                    <div class="terra-item">
+                        <div class="icon">🚀</div>
+                        <h4>Масштабируемость</h4>
+                        <p>Решения для малых цехов и федеральных холдингов.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 ПАО «Ростелеком». Индустрия 4.0</p>
+        </footer>
+    </div>
+
+    <div id="modal-overlay" class="modal hidden">
+        <button class="close-btn" onclick="closeSlide()">ЗАКРЫТЬ ✕</button>
+        <div class="modal-content" id="modal-body">
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
