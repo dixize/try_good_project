@@ -1,0 +1,134 @@
+:root {
+    --bg-dark: #050a14;
+    --rt-blue: #001a4d;
+    --rt-orange: #ff4f12;
+    --text-white: #ffffff;
+    --text-gray: #b0b8c4;
+    --card-bg: rgba(255, 255, 255, 0.05);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+body {
+    background-color: var(--bg-dark);
+    background-image: radial-gradient(circle at 50% 0%, #00266e 0%, #000000 80%);
+    color: var(--text-white);
+    min-height: 100vh;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Хедер */
+header { padding: 40px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.header-content { display: flex; align-items: center; gap: 20px; }
+.rt-logo { height: 50px; filter: brightness(0) invert(1); }
+.brand-line h1 { font-size: 1.5rem; text-transform: uppercase; letter-spacing: 1px; }
+.sub-brand { color: var(--rt-orange); font-weight: bold; letter-spacing: 2px; }
+
+/* Меню карточек */
+.menu-section { padding: 60px 0; }
+.grid-menu { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 20px; 
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    background: var(--rt-orange);
+    border-color: var(--rt-orange);
+    transform: translateY(-5px);
+}
+
+.card .num { font-size: 3rem; font-weight: 900; opacity: 0.1; position: absolute; top: 10px; right: 15px; }
+.card h3 { margin: 20px 0 10px; font-size: 1.2rem; }
+.card p { font-size: 0.9rem; color: var(--text-gray); }
+.card:hover p { color: white; }
+
+/* Секция Терра */
+.terra-section {
+    background: #001233; /* Темно-синий блок */
+    padding: 80px 0;
+    margin-top: 40px;
+    border-top: 4px solid var(--rt-orange);
+}
+
+.terra-section h2 { font-size: 2.5rem; margin-bottom: 30px; color: white; }
+.terra-desc { max-width: 800px; margin-bottom: 50px; font-size: 1.1rem; line-height: 1.6; color: var(--text-gray); }
+
+.terra-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.terra-item { background: rgba(0,0,0,0.2); padding: 30px; border-radius: 10px; border-left: 3px solid var(--rt-orange); }
+.terra-item .icon { font-size: 2rem; margin-bottom: 15px; }
+.terra-item h4 { margin-bottom: 10px; color: white; }
+.terra-item p { font-size: 0.9rem; color: var(--text-gray); }
+
+footer { text-align: center; padding: 40px; color: #555; font-size: 0.8rem; }
+
+/* МОДАЛЬНОЕ ОКНО (СЛАЙД) */
+.modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: #000814; /* Полностью перекрывает фон */
+    z-index: 9999;
+    overflow-y: auto;
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.hidden { display: none; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+.close-btn {
+    position: fixed; top: 20px; right: 20px;
+    background: var(--rt-orange); color: white;
+    border: none; padding: 10px 25px;
+    font-weight: bold; cursor: pointer;
+    border-radius: 50px; z-index: 10000;
+}
+
+.modal-content {
+    max-width: 1200px; margin: 0 auto; padding: 80px 20px;
+}
+
+/* Стили внутри слайда */
+.slide-header { border-bottom: 2px solid var(--rt-orange); padding-bottom: 20px; margin-bottom: 30px; }
+.slide-header h1 { font-size: 2.5rem; color: white; }
+
+.slide-body { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; }
+
+.text-col ul { list-style: none; margin-top: 20px; }
+.text-col li { margin-bottom: 15px; padding-left: 20px; border-left: 2px solid var(--rt-orange); color: var(--text-gray); }
+
+.effects-box {
+    background: var(--rt-blue); padding: 20px; border-radius: 10px; margin-top: 30px; border: 1px solid #334d80;
+}
+
+.grid-images { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+.img-card { background: #1a263a; border-radius: 8px; overflow: hidden; }
+.img-placeholder {
+    width: 100%; height: 140px; background: #333; 
+    display: flex; align-items: center; justify-content: center; color: #777; font-size: 0.8rem;
+}
+.img-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+.img-card h5 { padding: 10px; color: var(--rt-orange); font-size: 0.9rem; }
+.img-card span { display: block; padding: 0 10px 10px; font-size: 0.8rem; color: #ccc; }
+
+.partners-row { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 40px; }
+.partner-badge { background: white; color: black; padding: 8px 15px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; }
+
+/* Адаптивность */
+@media (max-width: 900px) {
+    .terra-grid { grid-template-columns: 1fr; }
+    .slide-body { grid-template-columns: 1fr; }
+    .grid-images { grid-template-columns: 1fr 1fr; }
+}
